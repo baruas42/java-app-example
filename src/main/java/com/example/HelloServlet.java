@@ -19,8 +19,8 @@ public class HelloServlet extends HttpServlet {
                 + "</style></head><body>"
                 + "<h1>Hello, World!</h1>"
                 + "<p>Welcome to my stylish web application.</p>"
-		+ "<iframe src='https://giphy.com/embed/l3E6KC64glestQ7Sw' width='480' height='271' style='' frameBorder='0' class='giphy-embed' allowFullScreen></iframe> <br><br><br>"
 		+ "<img src='https://media1.tenor.com/m/_qj8lY8hT08AAAAC/keanu-reeves-blow-kiss.gif' alt='Keanu Reeves GIF' />"
+		+ "<img src='https://i0.wp.com/media3.giphy.com/media/l3E6KC64glestQ7Sw/giphy.gif' alt='Silicon valley' />"
                 + "</body></html>");
     }
 }
