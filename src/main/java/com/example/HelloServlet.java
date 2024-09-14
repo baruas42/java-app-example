@@ -19,6 +19,7 @@ public class HelloServlet extends HttpServlet {
                 + "</style></head><body>"
                 + "<h1>Hello, World!</h1>"
                 + "<p>Welcome to my stylish web application.</p>"
+		+ "<img src='https://media1.tenor.com/m/_qj8lY8hT08AAAAC/keanu-reeves-blow-kiss.gif' alt='Keanu Reeves GIF' />"
                 + "</body></html>");
     }
 }
