@@ -3,13 +3,13 @@ pipeline {
 
 
   environment {
-    GIT_REPO = "https://github.com/someperson42/java-gradle"
-    imagename = "saurab42/gradle-java"
-    registryCredential = 'bca956f1-3624-424f-9a1e-5142d3a30e74'
+    GIT_REPO = "https://github.com/baruas42/java-gradle"
+    imagename = "saurab42/jenkins-app"
+    registryCredential = 'docker-cred'
     dockerPath = "."
     dockerContext = "."
     dockerImage = ''
-    JAVA_HOME= "/usr/lib/jvm/java-17-openjdk-17.0.12.0.7-2.el9.x86_64"
+    JAVA_HOME= "/home/saurab/jdk17/"
 
   }
   
@@ -71,16 +71,15 @@ pipeline {
       stage("Archive Artifacts") {
           steps {
               archiveArtifacts artifacts: 'build/libs/*.war', followSymlinks: false
+
           }
       }
       
       stage("Deploy war/ear to a container") {
           steps {
-              
-              sh'ls -al build/libs/my-web-app.war'
-              deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.107:8090/')], contextPath: null, war: 'build/libs/*.war'
+              sh'ls -al build/libs/*.war'
+              deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://10.0.0.17:7080/')], contextPath: null, war: 'build/libs/*.war'
           }
       }
   }
 }
-
